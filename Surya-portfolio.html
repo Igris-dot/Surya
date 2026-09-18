@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhana Surya — Software Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- Claude Theme Tokens (from tweakcn / Anthropic design system) ---------- */
+    :root {
+      --background: #faf9f5;
+      --foreground: #141413;
+      --card: #faf9f5;
+      --card-foreground: #141413;
+      --popover: #ffffff;
+      --popover-foreground: #141413;
+      --primary: #d97757;
+      --primary-foreground: #ffffff;
+      --secondary: #e8e6dc;
+      --secondary-foreground: #3d3d3a;
+      --muted: #e8e6dc;
+      --muted-foreground: #6c6a64;
+      --accent: #e8e6dc;
+      --accent-foreground: #141413;
+      --destructive: #141413;
+      --destructive-foreground: #ffffff;
+      --border: #e6dfd8;
+      --input: #b0aea5;
+      --ring: #d97757;
+      --radius: 0.5rem;
+      --font-sans: 'Lato', ui-sans-serif, system-ui, sans-serif;
+      --font-serif: 'Lora', ui-serif, Georgia, serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    /* ---------- Reset & Base ---------- */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* ---------- Utility ---------- */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin-inline: auto;
+      padding-inline: 1.5rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.0625rem;
+      color: var(--muted-foreground);
+      max-width: 36rem;
+      line-height: 1.7;
+    }
+
+    /* ---------- Header / Nav ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(250, 249, 245, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--foreground);
+    }
+
+    .nav-logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--foreground);
+    }
+
+    .nav-cta {
+      display: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.5rem 1.125rem;
+      border-radius: var(--radius);
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      opacity: 0.9;
+    }
+
+    .nav-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius);
+      color: var(--foreground);
+    }
+
+    .nav-toggle:hover {
+      background-color: var(--secondary);
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+      .nav-cta {
+        display: inline-block;
+      }
+      .nav-toggle {
+        display: none;
+      }
+    }
+
+    /* ---------- Mobile Menu ---------- */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 64px 0 0 0;
+      z-index: 40;
+      background-color: var(--background);
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .mobile-menu.is-open {
+      display: block;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .mobile-menu a {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--foreground);
+    }
+
+    .mobile-menu .nav-cta {
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: 6rem 0 5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding: 8rem 0 6rem;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 4rem;
+      }
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--primary);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.25rem, 6vw, 4rem);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--foreground);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--muted-foreground);
+      max-width: 32rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--foreground);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--secondary);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) * 2);
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(20, 20, 19, 0.04);
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #c96442);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary-foreground);
+    }
+
+    .hero-card-name {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--foreground);
+    }
+
+    .hero-card-role {
+      font-size: 0.8125rem;
+      color: var(--muted-foreground);
+    }
+
+    .hero-stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .hero-stat-label {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .hero-stat-value {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--foreground);
+    }
+
+    /* ---------- Section spacing ---------- */
+    .section {
+      padding: 5rem 0;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding: 6rem 0;
+      }
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    /* ---------- About ---------- */
+    .about-grid {
+      display: grid;
+      gap: 3rem;
+    }
+
+    @media (min-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 5rem;
+        align-items: start;
+      }
+    }
+
+    .about-text p {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: var(--muted-foreground);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-text strong {
+      color: var(--foreground);
+      font-weight: 600;
+    }
+
+    .about-details {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .about-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem;
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .about-item-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: calc(var(--radius) * 0.75);
+      background-color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+    }
+
+    .about-item-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 0.125rem;
+    }
+
+    .about-item-desc {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      line-height: 1.5;
+    }
+
+    /* ---------- Projects ---------- */
+    .projects-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) * 1.5);
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--input);
+      box-shadow: 0 4px 12px rgba(20, 20, 19, 0.06);
+    }
+
+    .project-thumb {
+      aspect-ratio: 16 / 10;
+      background-color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, rgba(217, 119, 87, 0.08));
+    }
+
+    .project-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: 0.625rem;
+    }
+
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--foreground);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-desc {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--muted-foreground);
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--foreground);
+      transition: color 0.2s ease;
+    }
+
+    .project-link:hover {
+      color: var(--primary);
+    }
+
+    .project-link svg {
+      transition: transform 0.2s ease;
+    }
+
+    .project-link:hover svg {
+      transform: translateX(2px);
+    }
+
+    /* ---------- Skills ---------- */
+    .skills-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .skill-category {
+      padding: 1.75rem;
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .skill-category-title {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .skill-list li {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.375rem 0.75rem;
+      border-radius: 9999px;
+      background-color: var(--secondary);
+      color: var(--secondary-foreground);
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-card {
+      background-color: var(--foreground);
+      color: var(--background);
+      border-radius: calc(var(--radius) * 2);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .contact-card {
+        padding: 4rem 3rem;
+      }
+    }
+
+    .contact-card .section-title {
+      color: var(--background);
+    }
+
+    .contact-card .section-subtitle {
+      color: rgba(250, 249, 245, 0.7);
+      margin-inline: auto;
+      margin-bottom: 2rem;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .contact-card .btn-primary {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .contact-card .btn-secondary {
+      border-color: rgba(250, 249, 245, 0.25);
+      color: var(--background);
+    }
+
+    .contact-card .btn-secondary:hover {
+      background-color: rgba(250, 249, 245, 0.1);
+    }
+
+    /* ---------- Footer ---------- */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: var(--muted-foreground);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.8125rem;
+      color: var(--muted-foreground);
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--foreground);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main">
+      <a href="#" class="nav-logo">Dhana<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work &amp; Research</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta">Let's talk</a>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Work &amp; Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+  </div>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="hero-eyebrow">Software Engineer &bull; Tamil Nadu, India</p>
+          <h1 class="hero-title">Building <em>resilient</em> backends &amp; intelligent security systems.</h1>
+          <p class="hero-description">
+            Software Engineer specializing in Python, PHP/Swoole, WebSockets, real-time distributed architecture, and AI-driven HTTP threat detection. Pursuing an M.Sc. in Cyber Security with strong mathematical foundations.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              View my work
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div class="hero-avatar" aria-hidden="true">DS</div>
+              <div>
+                <div class="hero-card-name">Dhana Surya</div>
+                <div class="hero-card-role">Software Engineer</div>
+              </div>
+            </div>
+            <div class="hero-stat-row">
+              <span class="hero-stat-label">Specialization</span>
+              <span class="hero-stat-value">Backend &amp; Security</span>
+            </div>
+            <div class="hero-stat-row">
+              <span class="hero-stat-label">Education</span>
+              <span class="hero-stat-value">M.Sc. Cyber Security</span>
+            </div>
+            <div class="hero-stat-row">
+              <span class="hero-stat-label">Location</span>
+              <span class="hero-stat-value">Tamil Nadu, India</span>
+            </div>
+            <div class="hero-stat-row">
+              <span class="hero-stat-label">Status</span>
+              <span class="hero-stat-value">Available for Roles</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <span class="section-label">About</span>
+            <h2 class="section-title">Bridging mathematical foundations &amp; secure engineering.</h2>
+            <div class="about-text">
+              <p>
+                I am a <strong>Software Engineer</strong> based in Tamil Nadu, India, with a B.Sc. in Mathematics and currently pursuing an M.Sc. in Cyber Security at Manonmaniam Sundaranar University. My work unites analytical problem solving with robust backend engineering.
+              </p>
+              <p>
+                My focus lies in <strong>real-time backend architectures, distributed state, and cybersecurity research</strong>. Whether engineering low-latency vehicle telemetry handling 1,600+ students, building AI threat detection pipelines that identify anomalous HTTP patterns, or publishing developer tooling on the Chrome Web Store, I aim for measurable impact, security, and performance.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-details">
+            <div class="about-item">
+              <div class="about-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div>
+                <div class="about-item-title">Education &amp; Academic Focus</div>
+                <div class="about-item-desc">M.Sc. Cyber Security at Manonmaniam Sundaranar University (2025–Present) &bull; B.Sc. Mathematics at Sadakathullah Appa College (2021–2024, CGPA: 6.5/10).</div>
+              </div>
+            </div>
+            <div class="about-item">
+              <div class="about-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div>
+                <div class="about-item-title">High-Throughput Backends</div>
+                <div class="about-item-desc">Architecting low-latency systems using Python, PHP/Swoole, WebSockets, PostgreSQL, and Redis/Valkey for real-time telemetry and state management.</div>
+              </div>
+            </div>
+            <div class="about-item">
+              <div class="about-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+              <div>
+                <div class="about-item-title">Threat Detection &amp; AI Defense</div>
+                <div class="about-item-desc">Designing intelligent defense pipelines incorporating behavioral entropy, sliding window sequences, Autoencoder anomaly models, and ONNX runtime optimizations.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS & RESEARCH ========== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Research &amp; Engineering</span>
+          <h2 class="section-title">Projects &amp; Research.</h2>
+          <p class="section-subtitle">Real-time distributed architectures, intelligent security pipelines, and published developer tools.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="position: relative; z-index: 1;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Cybersecurity Research</span>
+              <h3 class="project-title">AI Threat Detection</h3>
+              <p class="project-desc">Research-oriented HTTP threat detection pipeline analyzing request behavior, URI entropy, and anomalous sequences. Evaluated on 3,000 requests across 6 attack scenarios, achieving a 99.9% detection rate, 0% false positives, and 99.4% reduction in missed attacks using Autoencoders, Random Forest, and ONNX runtime.</p>
+              <a href="https://github.com/Surya-0823/" target="_blank" rel="noopener noreferrer" class="project-link">
+                View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="position: relative; z-index: 1;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Real-Time Systems &bull; IoT</span>
+              <h3 class="project-title">VortexFleetz</h3>
+              <p class="project-desc">End-to-end school transportation management platform integrating driver, student, and admin applications with 2-second telemetry. Tracked 50 buses and 1,600+ students, reducing dedicated GPS hardware costs by 75% using Flutter, PHP/Swoole, PostgreSQL, Redis/Valkey, WebSockets, and Docker.</p>
+              <a href="https://github.com/Surya-0823/" target="_blank" rel="noopener noreferrer" class="project-link">
+                View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="position: relative; z-index: 1;"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0 3-3z"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Browser Extension &bull; AI</span>
+              <h3 class="project-title">CmdPrompt</h3>
+              <p class="project-desc">Published open-source Chrome extension providing reusable slash-command prompt templates inside ChatGPT, Claude, Gemini, and DeepSeek via a command-palette interface. Eliminates repetitive authoring with one-command templates and persistent prompt storage.</p>
+              <a href="https://chromewebstore.google.com/detail/cmdprompt/hpgfdhmdhondhgcfapnfgeedflocaaia" target="_blank" rel="noopener noreferrer" class="project-link">
+                Chrome Web Store
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Capabilities</span>
+          <h2 class="section-title">Technical Skills &amp; Coursework.</h2>
+          <p class="section-subtitle">A comprehensive toolkit spanning backend architecture, cybersecurity analysis, databases, and systems engineering.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="skill-category-title">Backend &amp; Architecture</h3>
+            <ul class="skill-list">
+              <li>REST APIs</li>
+              <li>WebSockets</li>
+              <li>Swoole</li>
+              <li>FastAPI</li>
+              <li>API Design</li>
+              <li>System Design</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Cybersecurity</h3>
+            <ul class="skill-list">
+              <li>Network Security</li>
+              <li>Web Security</li>
+              <li>Threat Detection</li>
+              <li>Security Architecture</li>
+              <li>HTTP Security Analysis</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Programming Languages</h3>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>PHP</li>
+              <li>Dart</li>
+              <li>SQL</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Databases &amp; In-Memory</h3>
+            <ul class="skill-list">
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>Valkey</li>
+              <li>DBMS</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Frontend &amp; Mobile</h3>
+            <ul class="skill-list">
+              <li>Flutter</li>
+              <li>Chrome Extension</li>
+              <li>Electron</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">DevOps, Tools &amp; Foundations</h3>
+            <ul class="skill-list">
+              <li>Git &amp; GitHub</li>
+              <li>Docker</li>
+              <li>Linux</li>
+              <li>Cursor</li>
+              <li>Claude code</li>
+              <li>Data Structures &amp; Algorithms</li>
+              <li>Operating Systems</li>
+              <li>Computer Networks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <span class="section-label" style="color: var(--primary);">Contact</span>
+          <h2 class="section-title">Let's connect &amp; build together.</h2>
+          <p class="section-subtitle">
+            Open to software engineering roles, backend development, and cybersecurity initiatives. Based in Tamil Nadu, India.
+          </p>
+          <div class="contact-actions">
+            <a href="mailto:dhanasurya.official@gmail.com" class="btn btn-primary">
+              dhanasurya.official@gmail.com
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/dhana-surya-224a0b3b7/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
+            <a href="https://github.com/Surya-0823/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+            <a href="tel:+919042357007" class="btn btn-secondary">+91 90423 57007</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; 2026 Dhana Surya. Software Engineer &bull; Tamil Nadu, India.</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Surya-0823/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/dhana-surya-224a0b3b7/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://chromewebstore.google.com/detail/cmdprompt/hpgfdhmdhondhgcfapnfgeedflocaaia" target="_blank" rel="noopener noreferrer">Chrome Extension</a></li>
+        <li><a href="mailto:dhanasurya.official@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPT ========== -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('mobileMenu');
+
+      toggle.addEventListener('click', function () {
+        const isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close mobile menu when a link is clicked
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
