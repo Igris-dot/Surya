@@ -1,0 +1,149 @@
+/* ==========================================================================
+   sections/hero.css — Hero Section (Calibrated Composition)
+   ========================================================================== */
+
+.hero {
+  padding: 5rem 0 4rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 7rem 0 5rem;
+  }
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+  }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  margin-bottom: 1.25rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--primary);
+}
+
+.hero-description {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--muted-foreground);
+  max-width: 34rem;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 1.5);
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(20, 20, 19, 0.03);
+}
+
+.hero-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.hero-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #c96442);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary-foreground);
+}
+
+.hero-card-name {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--foreground);
+}
+
+.hero-card-role {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.hero-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  gap: 0.75rem;
+}
+
+.hero-stat-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hero-stat-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+
+.hero-stat-value {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--foreground);
+  text-align: right;
+}

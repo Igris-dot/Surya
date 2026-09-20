@@ -1,0 +1,30 @@
+/* ==========================================================================
+   tokens.css — Design Tokens (CSS Custom Properties)
+   Claude Theme from tweakcn / Anthropic design system
+   ========================================================================== */
+
+:root {
+  --background: #faf9f5;
+  --foreground: #141413;
+  --card: #faf9f5;
+  --card-foreground: #141413;
+  --popover: #ffffff;
+  --popover-foreground: #141413;
+  --primary: #d97757;
+  --primary-foreground: #ffffff;
+  --secondary: #e8e6dc;
+  --secondary-foreground: #3d3d3a;
+  --muted: #e8e6dc;
+  --muted-foreground: #6c6a64;
+  --accent: #e8e6dc;
+  --accent-foreground: #141413;
+  --destructive: #141413;
+  --destructive-foreground: #ffffff;
+  --border: #e6dfd8;
+  --input: #b0aea5;
+  --ring: #d97757;
+  --radius: 0.5rem;
+  --font-sans: 'Lato', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Lora', ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}

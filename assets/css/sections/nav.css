@@ -1,0 +1,126 @@
+/* ==========================================================================
+   sections/nav.css — Site Header, Navigation & Mobile Menu
+   ========================================================================== */
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(250, 249, 245, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+
+.nav-logo span {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--foreground);
+}
+
+.nav-cta {
+  display: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1.125rem;
+  border-radius: var(--radius);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  transition: opacity 0.2s ease;
+}
+
+.nav-cta:hover {
+  opacity: 0.9;
+}
+
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  color: var(--foreground);
+}
+
+.nav-toggle:hover {
+  background-color: var(--secondary);
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+  .nav-cta {
+    display: inline-block;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* ---------- Mobile Menu ---------- */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 64px 0 0 0;
+  z-index: 40;
+  background-color: var(--background);
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.mobile-menu.is-open {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobile-menu a {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.mobile-menu .nav-cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+}

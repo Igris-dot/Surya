@@ -1,0 +1,67 @@
+/* ==========================================================================
+   layout.css — Shared Layout Utilities & Section Spacing
+   ========================================================================== */
+
+/* ---------- Utility ---------- */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Section Typography Utilities ---------- */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.0625rem;
+  color: var(--muted-foreground);
+  max-width: 36rem;
+  line-height: 1.7;
+}
+
+/* ---------- Section Spacing ---------- */
+.section {
+  padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
