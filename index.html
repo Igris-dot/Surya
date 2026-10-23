@@ -4,276 +4,397 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhana Surya — Software Engineer &amp; Founder</title>
-  <meta name="description" content="Portfolio of Dhana Surya — Software Engineer &amp; Founder. Specializing in high-throughput backend architecture, real-time distributed platforms (VortexFleetz), and AI threat detection." />
+  <meta name="description" content="Dhana Surya — Software Engineer &amp; Founder. High-throughput backends, real-time distributed platforms (VortexFleetz), and AI-driven HTTP threat detection." />
+  <meta name="theme-color" content="#0a0a0b" />
+  <meta name="color-scheme" content="dark" />
+
   <meta property="og:title" content="Dhana Surya — Software Engineer &amp; Founder" />
-  <meta property="og:description" content="Building resilient backends, real-time telemetry (VortexFleetz), and intelligent AI threat detection pipelines." />
+  <meta property="og:description" content="Resilient backends, real-time telemetry (VortexFleetz), and AI threat detection pipelines." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://igris-dot.github.io/Surya/" />
   <meta property="og:image" content="assets/images/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dhana Surya — Software Engineer &amp; Founder" />
-  <meta name="twitter:description" content="Building resilient backends, real-time telemetry (VortexFleetz), and intelligent AI threat detection pipelines." />
+  <meta name="twitter:description" content="Resilient backends, real-time telemetry (VortexFleetz), and AI threat detection pipelines." />
   <meta name="twitter:image" content="assets/images/og-image.png" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23d97757'/><text x='50' y='68' font-family='sans-serif' font-size='50' font-weight='bold' text-anchor='middle' fill='%23ffffff'>DS</text></svg>" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230a0a0b'/><text x='50' y='66' font-family='Georgia,serif' font-style='italic' font-size='52' text-anchor='middle' fill='%23ff6b3d'>ds</text></svg>" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="assets/css/tokens.css" />
-  <link rel="stylesheet" href="assets/css/reset.css" />
-  <link rel="stylesheet" href="assets/css/layout.css" />
-  <link rel="stylesheet" href="assets/css/components.css" />
-  <link rel="stylesheet" href="assets/css/transitions.css" />
-
-  <!-- Section Stylesheets -->
-  <link rel="stylesheet" href="assets/css/sections/nav.css" />
-  <link rel="stylesheet" href="assets/css/sections/hero.css" />
-  <link rel="stylesheet" href="assets/css/sections/about.css" />
-  <link rel="stylesheet" href="assets/css/sections/skills.css" />
-  <link rel="stylesheet" href="assets/css/sections/footer.css" />
+  <script>
+    document.documentElement.classList.add('js');
+    try { if (sessionStorage.getItem('ds-intro')) document.documentElement.classList.add('intro-seen'); } catch (e) {}
+  </script>
+  <script type="module" src="assets/js/main.js"></script>
 </head>
 <body>
-  <a href="#main-content" class="sr-only">Skip to content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" hidden>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+  </svg>
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header">
-    <nav class="container nav" aria-label="Main">
-      <a href="index.html" class="nav-logo">Dhana Surya<span>.</span></a>
-
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">About</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-
-      <a href="contact.html" class="nav-cta">Let's talk</a>
-
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
-    </nav>
-  </header>
-
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="index.html" class="active">About</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="contact.html" class="nav-cta">Let's talk</a>
+  <!-- Intro loader (skipped on repeat visits and for reduced motion) -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__name">Dhana Surya<em>.</em></span>
+      <span class="loader__count"><span data-loader-count>00</span>%</span>
+    </div>
+    <div class="loader__bar"><span></span></div>
   </div>
 
-  <main id="main-content">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label">View</span></div>
+  <div class="progress" aria-hidden="true"><span></span></div>
 
-    <!-- ========== HERO (sections/hero.html) ========== -->
-    <section class="hero" id="top">
-      <div class="container hero-grid">
-        <div>
-          <p class="hero-eyebrow">Software Engineer &amp; Founder &bull; Tamil Nadu, India</p>
-          <h1 class="hero-title">Building <em>resilient</em> backends &amp; real-time platforms.</h1>
-          <p class="hero-description">
-            I engineer high-throughput backend architectures and real-time distributed platforms, with deep focus on system concurrency, reliability, and automated threat defense. Founder of VortexFleetz, delivering 2-second telemetry across 50 buses and 1,600+ students.
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <a class="header__brand" href="#top" aria-label="Dhana Surya — back to top">
+      <span class="header__mark">ds</span>
+      <span class="header__name">Dhana Surya</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav__toggle-lines" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <ul class="nav__list" id="nav-menu">
+        <li><a class="nav__link" href="#work"><span class="nav__num">01</span>Work</a></li>
+        <li><a class="nav__link" href="#research"><span class="nav__num">02</span>Research</a></li>
+        <li><a class="nav__link" href="#skills"><span class="nav__num">03</span>Skills</a></li>
+        <li><a class="nav__link" href="#about"><span class="nav__num">04</span>About</a></li>
+        <li><a class="nav__link" href="#contact"><span class="nav__num">05</span>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__meta">
+      <span class="status"><span class="status__dot"></span>Open to work</span>
+      <time class="header__clock" data-clock>IST --:--</time>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <p class="eyebrow hero__eyebrow" data-reveal>
+          <span class="eyebrow__line"></span>Software Engineer &amp; Founder — Tamil Nadu, India
+        </p>
+
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span class="line__inner">Engineering</span></span>
+          <span class="line"><span class="line__inner"><em>resilient</em> backends</span></span>
+          <span class="line"><span class="line__inner">&amp; <span class="nowrap">real-time</span> <span class="hero__outline">systems.</span></span></span>
+        </h1>
+
+        <div class="hero__foot">
+          <p class="hero__lead" data-reveal>
+            I design high-throughput backend architecture and distributed platforms — with deep focus on concurrency, reliability, and automated threat defense. Founder of <strong>VortexFleetz</strong>.
           </p>
-          <div class="hero-actions">
-            <a href="work.html" class="btn btn-primary">
-              View my work
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div class="hero__actions" data-reveal>
+            <a class="button button--primary" href="#work" data-magnetic>
+              <span>Selected work</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-down" /></svg>
             </a>
-            <a href="contact.html" class="btn btn-secondary">Get in touch</a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-card">
-            <!-- Profile Portrait & Identity -->
-            <div style="text-align: center; margin-bottom: 1rem;">
-              <div style="width: 100%; max-width: 180px; aspect-ratio: 1 / 1; margin: 0 auto 0.75rem; border-radius: calc(var(--radius) * 1.5); overflow: hidden; border: 2px solid var(--border); box-shadow: 0 4px 14px rgba(20, 20, 19, 0.05); background-color: var(--secondary); position: relative;" title="Dhana Surya — Software Engineer &amp; Founder">
-                <img src="assets/images/profile-photo.jpg" alt="Dhana Surya - Profile Photo" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 600; color: var(--muted-foreground);">DS</div>
-              </div>
-              <div class="hero-card-name">Dhana Surya</div>
-              <div class="hero-card-role">Software Engineer &amp; Founder</div>
-            </div>
-
-            <!-- High-Signal Credibility Metrics -->
-            <div class="hero-stat-row">
-              <span class="hero-stat-label">Live Telemetry</span>
-              <span class="hero-stat-value">50 Buses &bull; 1,600+ Students (2s sync)</span>
-            </div>
-            <div class="hero-stat-row">
-              <span class="hero-stat-label">Hardware Impact</span>
-              <span class="hero-stat-value">75% Dedicated GPS Reliance Cut</span>
-            </div>
-            <div class="hero-stat-row">
-              <span class="hero-stat-label">Threat Defense</span>
-              <span class="hero-stat-value">99.9% Detection &bull; 0% False Positives</span>
-            </div>
-            <div class="hero-stat-row">
-              <span class="hero-stat-label">Academic Rigor</span>
-              <span class="hero-stat-value">M.Sc. Cyber Sec &bull; B.Sc. Math</span>
-            </div>
+            <a class="button button--ghost" href="#contact" data-magnetic><span>Get in touch</span></a>
           </div>
         </div>
       </div>
+
+      <div class="hero__scroll" aria-hidden="true"><span>Scroll</span><i></i></div>
     </section>
 
-    <!-- ========== ABOUT (sections/about.html) ========== -->
-    <section class="section" id="about">
+    <!-- ============ METRICS ============ -->
+    <section class="metrics" aria-label="Key results">
+      <dl class="container metrics__grid">
+        <div class="metric" data-reveal>
+          <dt>Live buses tracked</dt>
+          <dd><span data-count="50">50</span></dd>
+        </div>
+        <div class="metric" data-reveal>
+          <dt>Students served</dt>
+          <dd><span data-count="1600">1,600</span><sup>+</sup></dd>
+        </div>
+        <div class="metric" data-reveal>
+          <dt>Telemetry sync</dt>
+          <dd><span data-count="2">2</span><sup>s</sup></dd>
+        </div>
+        <div class="metric" data-reveal>
+          <dt>Threat detection</dt>
+          <dd><span data-count="99.9" data-decimals="1">99.9</span><sup>%</sup></dd>
+        </div>
+        <div class="metric" data-reveal>
+          <dt>GPS hardware cut</dt>
+          <dd><span data-count="75">75</span><sup>%</sup></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Distributed Systems</span><i>✦</i><span><em>WebSockets</em></span><i>✦</i><span>Threat Detection</span><i>✦</i><span><em>PostgreSQL</em></span><i>✦</i><span>Swoole</span><i>✦</i><span><em>ONNX Runtime</em></span><i>✦</i><span>Flutter</span><i>✦</i><span><em>Redis &amp; Valkey</em></span><i>✦</i>
+        <span>Distributed Systems</span><i>✦</i><span><em>WebSockets</em></span><i>✦</i><span>Threat Detection</span><i>✦</i><span><em>PostgreSQL</em></span><i>✦</i><span>Swoole</span><i>✦</i><span><em>ONNX Runtime</em></span><i>✦</i><span>Flutter</span><i>✦</i><span><em>Redis &amp; Valkey</em></span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ WORK ============ -->
+    <section class="section work" id="work" aria-labelledby="work-title">
       <div class="container">
-        <div class="about-grid">
-          <div>
-            <span class="section-label">About &bull; Background</span>
-            <h2 class="section-title">Bridging mathematical foundations &amp; secure engineering.</h2>
-            <div class="about-text">
-              <p>
-                I am a <strong>Software Engineer &amp; Founder</strong> based in Tamil Nadu, India, with a B.Sc. in Mathematics and currently pursuing an M.Sc. in Cyber Security at the Center for Information Technology and Engineering, Manonmaniam Sundaranar University. I apply analytical mathematical rigor to production-scale distributed backends, system concurrency, and automated defense pipelines.
-              </p>
-              <p>
-                As the founder of <strong>VortexFleetz</strong>, I engineered end-to-end transportation infrastructure delivering 2-second live telemetry across 50 buses and 1,600+ students, eliminating dedicated GPS hardware overhead by 75%. In cybersecurity research, I specialize in <strong>behavioral HTTP threat detection</strong>, training Autoencoders and sequence classifiers to intercept evasive attack payloads in sub-millisecond ONNX inference.
-              </p>
-            </div>
-          </div>
+        <header class="section-head">
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>01 — Selected work</p>
+          <h2 class="section-head__title" id="work-title" data-split>Production platforms &amp; <em>live</em> systems.</h2>
+          <p class="section-head__lead" data-reveal>Real-time telemetry, published developer tooling, and products built for reliability at scale.</p>
+        </header>
 
-          <div class="about-details">
-            <div class="about-item">
-              <div class="about-item-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <ol class="projects" role="list">
+          <li class="project" data-project>
+            <article class="project__card">
+              <div class="project__info">
+                <div class="project__top">
+                  <span class="project__index">01</span>
+                  <span class="project__tag">Founder · Real-time IoT telemetry · 2024–2025</span>
+                </div>
+                <h3 class="project__title">VortexFleetz</h3>
+                <p class="project__text">End-to-end school transportation platform uniting driver, student, and admin apps — real-time vehicle tracking, route management, trip monitoring, and student visibility.</p>
+                <dl class="project__facts">
+                  <div><dt>Scale</dt><dd>50 buses · 1,600+ students live</dd></div>
+                  <div><dt>Telemetry</dt><dd>2-second persistent WebSocket updates</dd></div>
+                  <div><dt>Impact</dt><dd>75% less dedicated GPS hardware</dd></div>
+                </dl>
+                <ul class="tags" role="list" aria-label="Stack">
+                  <li>Flutter</li><li>PHP / Swoole</li><li>PostgreSQL</li><li>Redis / Valkey</li><li>WebSockets</li><li>Docker</li>
+                </ul>
+                <a class="link-arrow" href="http://www.vortexfleetz.com/" target="_blank" rel="noopener noreferrer">
+                  vortexfleetz.com <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
               </div>
-              <div>
-                <div class="about-item-title">Founder &bull; VortexFleetz (May 2024 – Aug 2025)</div>
-                <div class="about-item-desc">Engineered full-stack telemetry and route monitoring tracking 50 buses and 1,600+ students with 2s live updates, cutting dedicated GPS hardware reliance by 75% (<a href="http://www.vortexfleetz.com/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">vortexfleetz.com</a>).</div>
+              <a class="project__media" href="http://www.vortexfleetz.com/" target="_blank" rel="noopener noreferrer" data-cursor="Visit" tabindex="-1" aria-hidden="true">
+                <img src="assets/images/vortexfleetz.webp" alt="" width="960" height="600" loading="lazy" />
+              </a>
+            </article>
+          </li>
+
+          <li class="project" data-project>
+            <article class="project__card">
+              <div class="project__info">
+                <div class="project__top">
+                  <span class="project__index">02</span>
+                  <span class="project__tag">Published Chrome extension · AI tooling</span>
+                </div>
+                <h3 class="project__title">CmdPrompt</h3>
+                <p class="project__text">Open-source extension that brings reusable slash-command prompt templates to ChatGPT, Claude, Gemini, and DeepSeek through a fast command palette.</p>
+                <dl class="project__facts">
+                  <div><dt>Product</dt><dd>Slash-command palette for prompts</dd></div>
+                  <div><dt>Works in</dt><dd>ChatGPT, Claude, Gemini, DeepSeek</dd></div>
+                  <div><dt>Shipped</dt><dd>Live on the Chrome Web Store</dd></div>
+                </dl>
+                <ul class="tags" role="list" aria-label="Stack">
+                  <li>Chromium Extension APIs</li><li>Command parsing</li><li>Persistent state</li>
+                </ul>
+                <a class="link-arrow" href="https://chromewebstore.google.com/detail/hpgfdhmdhondhgcfapnfgeedflocaaia?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">
+                  Chrome Web Store <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
               </div>
-            </div>
-            <div class="about-item">
-              <div class="about-item-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              <a class="project__media" href="https://chromewebstore.google.com/detail/hpgfdhmdhondhgcfapnfgeedflocaaia?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer" data-cursor="Install" tabindex="-1" aria-hidden="true">
+                <img src="assets/images/cmdprompt.webp" alt="" width="960" height="600" loading="lazy" />
+              </a>
+            </article>
+          </li>
+
+          <li class="project" data-project>
+            <article class="project__card">
+              <div class="project__info">
+                <div class="project__top">
+                  <span class="project__index">03</span>
+                  <span class="project__tag">Web app · Browser extension</span>
+                </div>
+                <h3 class="project__title">ZeroFeed</h3>
+                <p class="project__text">A commitment-based digital detox platform and YouTube feed eliminator, powered by an authoritative state-machine lock engine and payment webhooks.</p>
+                <dl class="project__facts">
+                  <div><dt>Architecture</dt><dd>Authoritative state-machine lock engine</dd></div>
+                  <div><dt>Security</dt><dd>Supabase Postgres + Row Level Security</dd></div>
+                  <div><dt>Reliability</dt><dd>Offline-resilient cache &amp; webhooks</dd></div>
+                </dl>
+                <ul class="tags" role="list" aria-label="Stack">
+                  <li>WXT</li><li>React</li><li>TypeScript</li><li>Supabase</li><li>Tailwind CSS</li>
+                </ul>
+                <a class="link-arrow" href="https://zero-feed.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  zero-feed.vercel.app <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
               </div>
-              <div>
-                <div class="about-item-title">AI Threat Detection &amp; Defense (Apr 2026 – Present)</div>
-                <div class="about-item-desc">Developed behavioral HTTP inspection pipelines analyzing request entropy and sliding sequences. Achieved 99.9% detection, 0% false positives, and 99.4% reduction in missed attacks over static signatures.</div>
-              </div>
-            </div>
-            <div class="about-item">
-              <div class="about-item-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              </div>
-              <div>
-                <div class="about-item-title">Education &amp; Mathematical Rigor</div>
-                <div class="about-item-desc">M.Sc. Cyber Security at MSU, Tirunelveli (2025–Present) &bull; B.Sc. Mathematics at Sadakathullah Appa College (2021–2024, CGPA: 6.5/10).</div>
-              </div>
-            </div>
-          </div>
-        </div>
+              <a class="project__media" href="https://zero-feed.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor="Visit" tabindex="-1" aria-hidden="true">
+                <img src="assets/images/zerofeed.webp" alt="" width="960" height="600" loading="lazy" />
+              </a>
+            </article>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- ========== SKILLS (sections/skills.html) ========== -->
-    <section class="section" id="skills">
+    <!-- ============ RESEARCH ============ -->
+    <section class="section research" id="research" aria-labelledby="research-title">
       <div class="container">
-        <div class="section-header">
-          <span class="section-label">Capabilities &amp; Coursework</span>
-          <h2 class="section-title">Technical Skills &amp; Systems Rigor.</h2>
-          <p class="section-subtitle">A production-tested toolkit spanning backend concurrency, cybersecurity analysis, distributed databases, and systems engineering.</p>
+        <header class="section-head">
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>02 — Research · Apr 2026 – present</p>
+          <h2 class="section-head__title" id="research-title" data-split>Behavioral <em>HTTP</em> threat detection.</h2>
+          <p class="section-head__lead" data-reveal>Static WAF signatures are evaded with obfuscation and nested encodings. This pipeline reads request <em>behavior</em> instead — entropy, sequences, anomalies — and classifies in under a millisecond.</p>
+        </header>
+
+        <dl class="research__stats">
+          <div class="rstat" data-reveal><dt>Detection rate</dt><dd><span data-count="99.9" data-decimals="1">99.9</span>%</dd></div>
+          <div class="rstat" data-reveal><dt>False positives</dt><dd><span data-count="0">0</span>%</dd></div>
+          <div class="rstat" data-reveal><dt>Fewer missed attacks</dt><dd><span data-count="99.4" data-decimals="1">99.4</span>%</dd></div>
+          <div class="rstat" data-reveal><dt>ONNX inference</dt><dd>&lt;<span data-count="1">1</span><small>ms</small></dd></div>
+        </dl>
+
+        <div class="pipeline" data-reveal>
+          <p class="pipeline__label">Pipeline · per request</p>
+          <ol class="pipeline__steps" role="list">
+            <li class="step"><span class="step__n">01</span><h3>HTTP parsing</h3><p>Normalize URI params, tokenize structure, compute Shannon entropy over raw buffers.</p></li>
+            <li class="step"><span class="step__n">02</span><h3>Behavior windows</h3><p>Sliding windows track payload anomalies and transition density across token sequences.</p></li>
+            <li class="step"><span class="step__n">03</span><h3>Dual-stage model</h3><p>Autoencoder reconstruction error flags novel anomalies; Random Forest confirms the attack class.</p></li>
+            <li class="step"><span class="step__n">04</span><h3>ONNX at the edge</h3><p>Built to sit inside Nginx / Envoy reverse proxies with sub-millisecond classification.</p></li>
+          </ol>
+          <div class="pipeline__wire" aria-hidden="true"><span></span></div>
         </div>
 
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3 class="skill-category-title">Backend &amp; Distributed Systems</h3>
-            <ul class="skill-list">
-              <li>REST APIs</li>
-              <li>WebSockets</li>
-              <li>Swoole</li>
-              <li>FastAPI</li>
-              <li>API Design</li>
-              <li>System Design</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-category-title">Cybersecurity &amp; Threat Defense</h3>
-            <ul class="skill-list">
-              <li>Network Security</li>
-              <li>Web Application Security</li>
-              <li>Threat Detection</li>
-              <li>Security Architecture</li>
-              <li>HTTP Security Analysis</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-category-title">Programming Languages</h3>
-            <ul class="skill-list">
-              <li>Python</li>
-              <li>PHP</li>
-              <li>Dart</li>
-              <li>SQL</li>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-category-title">Databases &amp; In-Memory Caches</h3>
-            <ul class="skill-list">
-              <li>PostgreSQL</li>
-              <li>Redis</li>
-              <li>Valkey</li>
-              <li>DBMS</li>
-              <li>Spatial Indexing</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-category-title">DevOps &amp; Infrastructure</h3>
-            <ul class="skill-list">
-              <li>Git &amp; GitHub</li>
-              <li>Docker</li>
-              <li>Linux</li>
-              <li>Cursor</li>
-              <li>Claude Code</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-category-title">Frontend, Mobile &amp; Foundations</h3>
-            <ul class="skill-list">
-              <li>Flutter</li>
-              <li>Chrome Extensions</li>
-              <li>Electron</li>
-              <li>Data Structures &amp; Algorithms</li>
-              <li>Operating Systems</li>
-              <li>Computer Networks</li>
+        <div class="research__detail">
+          <figure class="research__figure" data-reveal>
+            <img src="assets/images/ai-threat-detection.webp" alt="Threat detection pipeline architecture and benchmark results" width="960" height="600" loading="lazy" />
+          </figure>
+          <div class="research__notes" data-reveal>
+            <h3 class="research__heading">Evaluation</h3>
+            <p>Benchmarked on <strong>3,000 HTTP requests</strong> across <strong>6 realistic attack scenarios</strong> in controlled traffic simulation — a <strong>17.9% improvement</strong> over signature-only detection, with 100% precision.</p>
+            <ul class="tags" role="list" aria-label="Techniques">
+              <li>Python</li><li>Autoencoders</li><li>Random Forest</li><li>ONNX Runtime</li><li>URI entropy</li><li>Sliding windows</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ============ SKILLS ============ -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>03 — Capabilities</p>
+          <h2 class="section-head__title" id="skills-title" data-split>A toolkit tested in <em>production.</em></h2>
+        </header>
+
+        <ul class="bento" role="list">
+          <li class="bento__item bento__item--wide" data-spotlight data-reveal>
+            <span class="bento__n">A</span>
+            <h3>Backend &amp; distributed systems</h3>
+            <ul class="tags" role="list"><li>REST APIs</li><li>WebSockets</li><li>Swoole</li><li>FastAPI</li><li>API design</li><li>System design</li></ul>
+          </li>
+          <li class="bento__item" data-spotlight data-reveal>
+            <span class="bento__n">B</span>
+            <h3>Cybersecurity</h3>
+            <ul class="tags" role="list"><li>Network security</li><li>Web app security</li><li>Threat detection</li><li>Security architecture</li><li>HTTP analysis</li></ul>
+          </li>
+          <li class="bento__item" data-spotlight data-reveal>
+            <span class="bento__n">C</span>
+            <h3>Languages</h3>
+            <ul class="tags" role="list"><li>Python</li><li>PHP</li><li>Dart</li><li>SQL</li><li>HTML</li><li>CSS</li></ul>
+          </li>
+          <li class="bento__item" data-spotlight data-reveal>
+            <span class="bento__n">D</span>
+            <h3>Data &amp; caching</h3>
+            <ul class="tags" role="list"><li>PostgreSQL</li><li>Redis</li><li>Valkey</li><li>DBMS</li><li>Spatial indexing</li></ul>
+          </li>
+          <li class="bento__item" data-spotlight data-reveal>
+            <span class="bento__n">E</span>
+            <h3>DevOps &amp; tools</h3>
+            <ul class="tags" role="list"><li>Git &amp; GitHub</li><li>Docker</li><li>Linux</li><li>Cursor</li><li>Claude Code</li></ul>
+          </li>
+          <li class="bento__item bento__item--wide" data-spotlight data-reveal>
+            <span class="bento__n">F</span>
+            <h3>Frontend, mobile &amp; foundations</h3>
+            <ul class="tags" role="list"><li>Flutter</li><li>Chrome extensions</li><li>Electron</li><li>Data structures &amp; algorithms</li><li>Operating systems</li><li>Computer networks</li></ul>
+          </li>
+          <li class="bento__item bento__cta" data-reveal>
+            <p>Have a system that has to stay up?</p>
+            <a class="stretched" href="#contact"><strong>Let's talk</strong></a>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <figure class="about__photo" data-reveal>
+          <img src="assets/images/profile-photo.jpg" alt="Portrait of Dhana Surya" width="1024" height="1024" loading="lazy" />
+          <figcaption>Tirunelveli, Tamil Nadu</figcaption>
+        </figure>
+
+        <div class="about__body">
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>04 — About</p>
+          <h2 class="section-head__title" id="about-title" data-split>Mathematical rigor, applied to <em>secure</em> engineering.</h2>
+          <div class="prose" data-reveal>
+            <p>I'm a software engineer and founder with a B.Sc. in Mathematics, now pursuing an M.Sc. in Cyber Security at Manonmaniam Sundaranar University. I bring analytical discipline to production backends, concurrency, and automated defense.</p>
+            <p>At <strong>VortexFleetz</strong> I built transport infrastructure end to end. In research, I train autoencoders and sequence classifiers that catch evasive attack payloads at sub-millisecond speed.</p>
+          </div>
+
+          <ol class="timeline" role="list">
+            <li data-reveal><time>2026 —</time><div><h3>AI threat detection research</h3><p>Behavioral HTTP inspection · 99.9% detection</p></div></li>
+            <li data-reveal><time>2025 —</time><div><h3>M.Sc. Cyber Security</h3><p>Manonmaniam Sundaranar University, Tirunelveli</p></div></li>
+            <li data-reveal><time>2024 – 25</time><div><h3>Founder, VortexFleetz</h3><p>Real-time fleet telemetry for 50 buses</p></div></li>
+            <li data-reveal><time>2021 – 24</time><div><h3>B.Sc. Mathematics</h3><p>Sadakathullah Appa College</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>05 — Contact</p>
+        <h2 class="contact__title" id="contact-title" data-split>Let's build something <em>resilient.</em></h2>
+        <p class="contact__lead" data-reveal>Open to software engineering roles, backend architecture, and cybersecurity work.</p>
+
+        <div class="contact__actions" data-reveal>
+          <a class="contact__email" href="mailto:dhanasurya.official@gmail.com" data-magnetic>
+            <span>dhanasurya.official@gmail.com</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+          </a>
+          <button class="button button--ghost contact__copy" type="button" data-copy="dhanasurya.official@gmail.com">
+            <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
+            <span data-copy-label>Copy email</span>
+          </button>
+        </div>
+
+        <address class="contact__links">
+          <a href="tel:+919042357007"><span>Phone</span>+91 90423 57007</a>
+          <a href="https://www.linkedin.com/in/dhana-surya-224a0b3b7/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span>dhana-surya <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          <a href="https://github.com/Igris-dot" target="_blank" rel="noopener noreferrer"><span>GitHub</span>Igris-dot <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+        </address>
+      </div>
+    </section>
   </main>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="footer-copy">&copy; 2026 Dhana Surya. Software Engineer &amp; Founder &bull; Tamil Nadu, India.</p>
-      <ul class="footer-links">
-        <li><a href="https://github.com/Igris-dot" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/dhana-surya-224a0b3b7/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="http://www.vortexfleetz.com/" target="_blank" rel="noopener noreferrer">VortexFleetz</a></li>
-        <li><a href="https://zero-feed.vercel.app/" target="_blank" rel="noopener noreferrer">ZeroFeed</a></li>
-        <li><a href="mailto:dhanasurya.official@gmail.com">Email</a></li>
-      </ul>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 Dhana Surya</p>
+      <p class="footer__clock">Local time <time data-clock>--:--</time></p>
+      <a class="footer__top" href="#top">Back to top ↑</a>
     </div>
+    <p class="footer__giant" aria-hidden="true">Dhana Surya</p>
   </footer>
-
-  <!-- Scripts -->
-  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

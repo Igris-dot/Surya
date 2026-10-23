@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/work.html", "destination": "/#work", "permanent": true },
+    { "source": "/research.html", "destination": "/#research", "permanent": true },
+    { "source": "/contact.html", "destination": "/#contact", "permanent": true }
+  ]
+}
