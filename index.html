@@ -48,6 +48,7 @@
   </div>
 
   <div class="grain" aria-hidden="true"></div>
+  <div class="guides" aria-hidden="true"><div class="container"><i></i><i></i><i></i><i></i><i></i></div></div>
   <div class="cursor" aria-hidden="true"><span class="cursor__label">View</span></div>
   <div class="progress" aria-hidden="true"><span></span></div>
 
@@ -65,11 +66,16 @@
         <span class="visually-hidden">Menu</span>
       </button>
       <ul class="nav__list" id="nav-menu">
+        <li class="nav__indicator" aria-hidden="true"></li>
         <li><a class="nav__link" href="#work"><span class="nav__num">01</span>Work</a></li>
         <li><a class="nav__link" href="#research"><span class="nav__num">02</span>Research</a></li>
         <li><a class="nav__link" href="#skills"><span class="nav__num">03</span>Skills</a></li>
         <li><a class="nav__link" href="#about"><span class="nav__num">04</span>About</a></li>
         <li><a class="nav__link" href="#contact"><span class="nav__num">05</span>Contact</a></li>
+        <li class="nav__extra">
+          <a href="mailto:dhanasurya.official@gmail.com">dhanasurya.official@gmail.com</a>
+          <span class="status"><span class="status__dot"></span>Open to work</span>
+        </li>
       </ul>
     </nav>
 
@@ -87,11 +93,17 @@
       <div class="hero__glow" aria-hidden="true"></div>
 
       <div class="container hero__inner">
-        <p class="eyebrow hero__eyebrow" data-reveal>
-          <span class="eyebrow__line"></span>Software Engineer &amp; Founder — Tamil Nadu, India
-        </p>
+        <div class="hero__top">
+          <p class="eyebrow hero__eyebrow" data-reveal>
+            <span class="eyebrow__line"></span>Software Engineer &amp; Founder — Tamil Nadu, India
+          </p>
+          <p class="hero__focus" data-reveal aria-hidden="true">
+            <span class="hero__focus-key">Focus</span>
+            <span class="hero__focus-val" data-rotate="Backend architecture|Real-time telemetry|Threat detection">Backend architecture</span>
+          </p>
+        </div>
 
-        <h1 class="hero__title" id="hero-title">
+        <h1 class="hero__title" id="hero-title" data-chars>
           <span class="line"><span class="line__inner">Engineering</span></span>
           <span class="line"><span class="line__inner"><em>resilient</em> backends</span></span>
           <span class="line"><span class="line__inner">&amp; <span class="nowrap">real-time</span> <span class="hero__outline">systems.</span></span></span>
@@ -152,14 +164,17 @@
     <section class="section work" id="work" aria-labelledby="work-title">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>01 — Selected work</p>
+          <div class="section-head__bar" data-reveal>
+            <p class="eyebrow"><span class="eyebrow__line"></span>01 — Selected work</p>
+            <span class="section-head__count" aria-hidden="true">01 / 05</span>
+          </div>
           <h2 class="section-head__title" id="work-title" data-split>Production platforms &amp; <em>live</em> systems.</h2>
           <p class="section-head__lead" data-reveal>Real-time telemetry, published developer tooling, and products built for reliability at scale.</p>
         </header>
 
         <ol class="projects" role="list">
           <li class="project" data-project>
-            <article class="project__card">
+            <article class="project__card" data-spotlight>
               <div class="project__info">
                 <div class="project__top">
                   <span class="project__index">01</span>
@@ -180,14 +195,15 @@
                   <span class="visually-hidden">(opens in a new tab)</span>
                 </a>
               </div>
-              <a class="project__media" href="http://www.vortexfleetz.com/" target="_blank" rel="noopener noreferrer" data-cursor="Visit" tabindex="-1" aria-hidden="true">
-                <img src="assets/images/vortexfleetz.webp" alt="" width="960" height="600" loading="lazy" />
+              <a class="project__media is-framed" href="http://www.vortexfleetz.com/" target="_blank" rel="noopener noreferrer" data-cursor="Visit" tabindex="-1" aria-hidden="true" data-reveal="clip">
+                <span class="project__chrome"><i></i><i></i><i></i><b>vortexfleetz.com</b></span>
+                <span class="project__shot"><img src="assets/images/vortexfleetz.webp" alt="" width="960" height="600" loading="lazy" /></span>
               </a>
             </article>
           </li>
 
           <li class="project" data-project>
-            <article class="project__card">
+            <article class="project__card" data-spotlight>
               <div class="project__info">
                 <div class="project__top">
                   <span class="project__index">02</span>
@@ -208,14 +224,15 @@
                   <span class="visually-hidden">(opens in a new tab)</span>
                 </a>
               </div>
-              <a class="project__media" href="https://chromewebstore.google.com/detail/hpgfdhmdhondhgcfapnfgeedflocaaia?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer" data-cursor="Install" tabindex="-1" aria-hidden="true">
-                <img src="assets/images/cmdprompt.webp" alt="" width="960" height="600" loading="lazy" />
+              <a class="project__media is-framed" href="https://chromewebstore.google.com/detail/hpgfdhmdhondhgcfapnfgeedflocaaia?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer" data-cursor="Install" tabindex="-1" aria-hidden="true" data-reveal="clip">
+                <span class="project__chrome"><i></i><i></i><i></i><b>chromewebstore.google.com</b></span>
+                <span class="project__shot"><img src="assets/images/cmdprompt.webp" alt="" width="960" height="600" loading="lazy" /></span>
               </a>
             </article>
           </li>
 
           <li class="project" data-project>
-            <article class="project__card">
+            <article class="project__card" data-spotlight>
               <div class="project__info">
                 <div class="project__top">
                   <span class="project__index">03</span>
@@ -236,8 +253,9 @@
                   <span class="visually-hidden">(opens in a new tab)</span>
                 </a>
               </div>
-              <a class="project__media" href="https://zero-feed.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor="Visit" tabindex="-1" aria-hidden="true">
-                <img src="assets/images/zerofeed.webp" alt="" width="960" height="600" loading="lazy" />
+              <a class="project__media is-framed" href="https://zero-feed.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor="Visit" tabindex="-1" aria-hidden="true" data-reveal="clip">
+                <span class="project__chrome"><i></i><i></i><i></i><b>zero-feed.vercel.app</b></span>
+                <span class="project__shot"><img src="assets/images/zerofeed.webp" alt="" width="960" height="600" loading="lazy" /></span>
               </a>
             </article>
           </li>
@@ -249,7 +267,10 @@
     <section class="section research" id="research" aria-labelledby="research-title">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>02 — Research · Apr 2026 – present</p>
+          <div class="section-head__bar" data-reveal>
+            <p class="eyebrow"><span class="eyebrow__line"></span>02 — Research · Apr 2026 – present</p>
+            <span class="section-head__count" aria-hidden="true">02 / 05</span>
+          </div>
           <h2 class="section-head__title" id="research-title" data-split>Behavioral <em>HTTP</em> threat detection.</h2>
           <p class="section-head__lead" data-reveal>Static WAF signatures are evaded with obfuscation and nested encodings. This pipeline reads request <em>behavior</em> instead — entropy, sequences, anomalies — and classifies in under a millisecond.</p>
         </header>
@@ -261,20 +282,39 @@
           <div class="rstat" data-reveal><dt>ONNX inference</dt><dd>&lt;<span data-count="1">1</span><small>ms</small></dd></div>
         </dl>
 
-        <div class="pipeline" data-reveal>
-          <p class="pipeline__label">Pipeline · per request</p>
-          <ol class="pipeline__steps" role="list">
-            <li class="step"><span class="step__n">01</span><h3>HTTP parsing</h3><p>Normalize URI params, tokenize structure, compute Shannon entropy over raw buffers.</p></li>
-            <li class="step"><span class="step__n">02</span><h3>Behavior windows</h3><p>Sliding windows track payload anomalies and transition density across token sequences.</p></li>
-            <li class="step"><span class="step__n">03</span><h3>Dual-stage model</h3><p>Autoencoder reconstruction error flags novel anomalies; Random Forest confirms the attack class.</p></li>
-            <li class="step"><span class="step__n">04</span><h3>ONNX at the edge</h3><p>Built to sit inside Nginx / Envoy reverse proxies with sub-millisecond classification.</p></li>
-          </ol>
-          <div class="pipeline__wire" aria-hidden="true"><span></span></div>
+        <div class="lab">
+          <figure class="inspector" data-reveal data-inspector>
+            <figcaption class="inspector__bar">
+              <span class="inspector__title"><i></i>request inspector</span>
+              <span class="inspector__note">Illustration · simulated traffic</span>
+            </figcaption>
+            <ol class="inspector__rows" role="list" aria-label="Example requests and how the pipeline classifies them">
+              <li class="req"><span class="req__m">GET</span><code>/api/routes?bus=12</code><span class="req__bar" style="--e:.34"></span><span class="req__v">pass</span></li>
+              <li class="req req--bad"><span class="req__m">GET</span><code>/search?q=%2527%2520OR%25201%253D1--</code><span class="req__bar" style="--e:.86"></span><span class="req__v">flag</span></li>
+              <li class="req"><span class="req__m">POST</span><code>/login</code><span class="req__bar" style="--e:.41"></span><span class="req__v">pass</span></li>
+              <li class="req req--bad"><span class="req__m">GET</span><code>/img?file=..%252f..%252fetc%252fpasswd</code><span class="req__bar" style="--e:.9"></span><span class="req__v">flag</span></li>
+              <li class="req"><span class="req__m">GET</span><code>/trips/today?stop=4</code><span class="req__bar" style="--e:.3"></span><span class="req__v">pass</span></li>
+              <li class="req req--bad"><span class="req__m">POST</span><code>/comment?b=%3Csvg%2Fonload%3D…%3E</code><span class="req__bar" style="--e:.95"></span><span class="req__v">flag</span></li>
+            </ol>
+            <p class="inspector__legend" aria-hidden="true"><span>method</span><span>uri</span><span>entropy</span><span>verdict</span></p>
+            <span class="inspector__scan" aria-hidden="true"></span>
+          </figure>
+
+          <div class="pipeline" data-pipeline>
+            <p class="pipeline__label" data-reveal>Pipeline · per request</p>
+            <ol class="pipeline__steps" role="list">
+              <li class="step" data-reveal><span class="step__n">01</span><div><h3>HTTP parsing</h3><p>Normalize URI params, tokenize structure, compute Shannon entropy over raw buffers.</p></div></li>
+              <li class="step" data-reveal><span class="step__n">02</span><div><h3>Behavior windows</h3><p>Sliding windows track payload anomalies and transition density across token sequences.</p></div></li>
+              <li class="step" data-reveal><span class="step__n">03</span><div><h3>Dual-stage model</h3><p>Autoencoder reconstruction error flags novel anomalies; Random Forest confirms the attack class.</p></div></li>
+              <li class="step" data-reveal><span class="step__n">04</span><div><h3>ONNX at the edge</h3><p>Built to sit inside Nginx / Envoy reverse proxies with sub-millisecond classification.</p></div></li>
+            </ol>
+          </div>
         </div>
 
         <div class="research__detail">
-          <figure class="research__figure" data-reveal>
-            <img src="assets/images/ai-threat-detection.webp" alt="Threat detection pipeline architecture and benchmark results" width="960" height="600" loading="lazy" />
+          <figure class="research__figure" data-reveal="clip">
+            <span class="research__shot"><img src="assets/images/ai-threat-detection-pr.webp" alt="Precision–recall curves for rules-only, AE-only, RF-only, IF-only and ensemble detection. The ensemble curve holds precision at 1.0 across the full recall range (PR-AUC 1.0000)." width="616" height="520" loading="lazy" /></span>
+            <figcaption><span>Fig. 01</span>Precision–recall by detector</figcaption>
           </figure>
           <div class="research__notes" data-reveal>
             <h3 class="research__heading">Evaluation</h3>
@@ -291,54 +331,58 @@
     <section class="section skills" id="skills" aria-labelledby="skills-title">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>03 — Capabilities</p>
+          <div class="section-head__bar" data-reveal>
+            <p class="eyebrow"><span class="eyebrow__line"></span>03 — Capabilities</p>
+            <span class="section-head__count" aria-hidden="true">03 / 05</span>
+          </div>
           <h2 class="section-head__title" id="skills-title" data-split>A toolkit tested in <em>production.</em></h2>
         </header>
 
-        <ul class="bento" role="list">
-          <li class="bento__item bento__item--wide" data-spotlight data-reveal>
-            <span class="bento__n">A</span>
+        <ul class="ledger" role="list">
+          <li class="ledger__row" data-reveal>
+            <span class="ledger__n" aria-hidden="true">A</span>
             <h3>Backend &amp; distributed systems</h3>
             <ul class="tags" role="list"><li>REST APIs</li><li>WebSockets</li><li>Swoole</li><li>FastAPI</li><li>API design</li><li>System design</li></ul>
           </li>
-          <li class="bento__item" data-spotlight data-reveal>
-            <span class="bento__n">B</span>
+          <li class="ledger__row" data-reveal>
+            <span class="ledger__n" aria-hidden="true">B</span>
             <h3>Cybersecurity</h3>
             <ul class="tags" role="list"><li>Network security</li><li>Web app security</li><li>Threat detection</li><li>Security architecture</li><li>HTTP analysis</li></ul>
           </li>
-          <li class="bento__item" data-spotlight data-reveal>
-            <span class="bento__n">C</span>
+          <li class="ledger__row" data-reveal>
+            <span class="ledger__n" aria-hidden="true">C</span>
             <h3>Languages</h3>
             <ul class="tags" role="list"><li>Python</li><li>PHP</li><li>Dart</li><li>SQL</li><li>HTML</li><li>CSS</li></ul>
           </li>
-          <li class="bento__item" data-spotlight data-reveal>
-            <span class="bento__n">D</span>
+          <li class="ledger__row" data-reveal>
+            <span class="ledger__n" aria-hidden="true">D</span>
             <h3>Data &amp; caching</h3>
             <ul class="tags" role="list"><li>PostgreSQL</li><li>Redis</li><li>Valkey</li><li>DBMS</li><li>Spatial indexing</li></ul>
           </li>
-          <li class="bento__item" data-spotlight data-reveal>
-            <span class="bento__n">E</span>
+          <li class="ledger__row" data-reveal>
+            <span class="ledger__n" aria-hidden="true">E</span>
             <h3>DevOps &amp; tools</h3>
             <ul class="tags" role="list"><li>Git &amp; GitHub</li><li>Docker</li><li>Linux</li><li>Cursor</li><li>Claude Code</li></ul>
           </li>
-          <li class="bento__item bento__item--wide" data-spotlight data-reveal>
-            <span class="bento__n">F</span>
+          <li class="ledger__row" data-reveal>
+            <span class="ledger__n" aria-hidden="true">F</span>
             <h3>Frontend, mobile &amp; foundations</h3>
             <ul class="tags" role="list"><li>Flutter</li><li>Chrome extensions</li><li>Electron</li><li>Data structures &amp; algorithms</li><li>Operating systems</li><li>Computer networks</li></ul>
           </li>
-          <li class="bento__item bento__cta" data-reveal>
-            <p>Have a system that has to stay up?</p>
-            <a class="stretched" href="#contact"><strong>Let's talk</strong></a>
-            <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
-          </li>
         </ul>
+
+        <div class="cta-band" data-reveal>
+          <p>Have a system that has to stay up?</p>
+          <a class="stretched" href="#contact"><strong>Let's talk</strong></a>
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+        </div>
       </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
     <section class="section about" id="about" aria-labelledby="about-title">
       <div class="container about__grid">
-        <figure class="about__photo" data-reveal>
+        <figure class="about__photo" data-reveal="clip" data-parallax="0.08">
           <img src="assets/images/profile-photo.jpg" alt="Portrait of Dhana Surya" width="1024" height="1024" loading="lazy" />
           <figcaption>Tirunelveli, Tamil Nadu</figcaption>
         </figure>
@@ -352,10 +396,10 @@
           </div>
 
           <ol class="timeline" role="list">
-            <li data-reveal><time>2026 —</time><div><h3>AI threat detection research</h3><p>Behavioral HTTP inspection · 99.9% detection</p></div></li>
-            <li data-reveal><time>2025 —</time><div><h3>M.Sc. Cyber Security</h3><p>Manonmaniam Sundaranar University, Tirunelveli</p></div></li>
-            <li data-reveal><time>2024 – 25</time><div><h3>Founder, VortexFleetz</h3><p>Real-time fleet telemetry for 50 buses</p></div></li>
-            <li data-reveal><time>2021 – 24</time><div><h3>B.Sc. Mathematics</h3><p>Sadakathullah Appa College</p></div></li>
+            <li data-reveal><time>2026 —</time><div><span class="timeline__kind">Research</span><h3>AI threat detection research</h3><p>Behavioral HTTP inspection · 99.9% detection</p></div></li>
+            <li data-reveal><time>2025 —</time><div><span class="timeline__kind">Education</span><h3>M.Sc. Cyber Security</h3><p>Manonmaniam Sundaranar University, Tirunelveli</p></div></li>
+            <li data-reveal><time>2024 – 25</time><div><span class="timeline__kind">Experience</span><h3>Founder, VortexFleetz</h3><p>Real-time fleet telemetry for 50 buses</p></div></li>
+            <li data-reveal><time>2021 – 24</time><div><span class="timeline__kind">Education</span><h3>B.Sc. Mathematics</h3><p>Sadakathullah Appa College</p></div></li>
           </ol>
         </div>
       </div>
@@ -394,7 +438,7 @@
       <p class="footer__clock">Local time <time data-clock>--:--</time></p>
       <a class="footer__top" href="#top">Back to top ↑</a>
     </div>
-    <p class="footer__giant" aria-hidden="true">Dhana Surya</p>
+    <p class="footer__giant" aria-hidden="true" data-chars data-reveal-chars>Dhana Surya</p>
   </footer>
 </body>
 </html>
