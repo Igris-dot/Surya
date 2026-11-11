@@ -1,0 +1,62 @@
+<section class="section research" id="research" aria-labelledby="research-title">
+  <div class="container">
+    <header class="section-head">
+      <div class="section-head__bar" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__line"></span>02 — Research · Apr 2026 – present</p>
+        <span class="section-head__count" aria-hidden="true">02 / 05</span>
+      </div>
+      <h2 class="section-head__title" id="research-title" data-split>Behavioral <em>HTTP</em> threat detection.</h2>
+      <p class="section-head__lead" data-reveal>Static WAF signatures are evaded with obfuscation and nested encodings. This pipeline reads request <em>behavior</em> instead — entropy, sequences, anomalies — and classifies in under a millisecond.</p>
+    </header>
+
+    <dl class="research__stats">
+      <div class="rstat" data-reveal><dt>Detection rate</dt><dd><span data-count="99.9" data-decimals="1">99.9</span>%</dd></div>
+      <div class="rstat" data-reveal><dt>False positives</dt><dd><span data-count="0">0</span>%</dd></div>
+      <div class="rstat" data-reveal><dt>Fewer missed attacks</dt><dd><span data-count="99.4" data-decimals="1">99.4</span>%</dd></div>
+      <div class="rstat" data-reveal><dt>ONNX inference</dt><dd>&lt;<span data-count="1">1</span><small>ms</small></dd></div>
+    </dl>
+
+    <div class="lab">
+      <figure class="inspector" data-reveal data-inspector>
+        <figcaption class="inspector__bar">
+          <span class="inspector__title"><i></i>request inspector</span>
+          <span class="inspector__note">Illustration · simulated traffic</span>
+        </figcaption>
+        <ol class="inspector__rows" role="list" aria-label="Example requests and how the pipeline classifies them">
+          <li class="req"><span class="req__m">GET</span><code>/api/routes?bus=12</code><span class="req__bar" style="--e:.34"></span><span class="req__v">pass</span></li>
+          <li class="req req--bad"><span class="req__m">GET</span><code>/search?q=%2527%2520OR%25201%253D1--</code><span class="req__bar" style="--e:.86"></span><span class="req__v">flag</span></li>
+          <li class="req"><span class="req__m">POST</span><code>/login</code><span class="req__bar" style="--e:.41"></span><span class="req__v">pass</span></li>
+          <li class="req req--bad"><span class="req__m">GET</span><code>/img?file=..%252f..%252fetc%252fpasswd</code><span class="req__bar" style="--e:.9"></span><span class="req__v">flag</span></li>
+          <li class="req"><span class="req__m">GET</span><code>/trips/today?stop=4</code><span class="req__bar" style="--e:.3"></span><span class="req__v">pass</span></li>
+          <li class="req req--bad"><span class="req__m">POST</span><code>/comment?b=%3Csvg%2Fonload%3D…%3E</code><span class="req__bar" style="--e:.95"></span><span class="req__v">flag</span></li>
+        </ol>
+        <p class="inspector__legend" aria-hidden="true"><span>method</span><span>uri</span><span>entropy</span><span>verdict</span></p>
+        <span class="inspector__scan" aria-hidden="true"></span>
+      </figure>
+
+      <div class="pipeline" data-pipeline>
+        <p class="pipeline__label" data-reveal>Pipeline · per request</p>
+        <ol class="pipeline__steps" role="list">
+          <li class="step" data-reveal><span class="step__n">01</span><div><h3>HTTP parsing</h3><p>Normalize URI params, tokenize structure, compute Shannon entropy over raw buffers.</p></div></li>
+          <li class="step" data-reveal><span class="step__n">02</span><div><h3>Behavior windows</h3><p>Sliding windows track payload anomalies and transition density across token sequences.</p></div></li>
+          <li class="step" data-reveal><span class="step__n">03</span><div><h3>Dual-stage model</h3><p>Autoencoder reconstruction error flags novel anomalies; Random Forest confirms the attack class.</p></div></li>
+          <li class="step" data-reveal><span class="step__n">04</span><div><h3>ONNX at the edge</h3><p>Built to sit inside Nginx / Envoy reverse proxies with sub-millisecond classification.</p></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="research__detail">
+      <figure class="research__figure" data-reveal="clip">
+        <span class="research__shot"><img src="assets/images/ai-threat-detection-pr.webp" alt="Precision–recall curves for rules-only, AE-only, RF-only, IF-only and ensemble detection. The ensemble curve holds precision at 1.0 across the full recall range (PR-AUC 1.0000)." width="616" height="520" loading="lazy" /></span>
+        <figcaption><span>Fig. 01</span>Precision–recall by detector</figcaption>
+      </figure>
+      <div class="research__notes" data-reveal>
+        <h3 class="research__heading">Evaluation</h3>
+        <p>Benchmarked on <strong>3,000 HTTP requests</strong> across <strong>6 realistic attack scenarios</strong> in controlled traffic simulation — a <strong>17.9% improvement</strong> over signature-only detection, with 100% precision.</p>
+        <ul class="tags" role="list" aria-label="Techniques">
+          <li>Python</li><li>Autoencoders</li><li>Random Forest</li><li>ONNX Runtime</li><li>URI entropy</li><li>Sliding windows</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

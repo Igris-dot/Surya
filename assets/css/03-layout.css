@@ -1,0 +1,64 @@
+/* 3. Layout & type ----------------------------------------------------------- */
+/* Full width at every size: content runs edge to edge, inset only by the
+   gutter, so it lines up with the header. Long text keeps its own max-width. */
+.container {
+  width: 100%;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: var(--section) 0; position: relative; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow__line {
+  width: 2.5rem; height: 1px;
+  background: var(--accent);
+  transform-origin: left;
+}
+
+/* Section head: a ruled bar (label + counter), then title left / lead right. */
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  column-gap: clamp(2rem, 6vw, 6rem);
+  row-gap: clamp(1.75rem, 3.5vw, 3rem);
+  align-items: end;
+  margin-bottom: clamp(3rem, 6vw, 6rem);
+}
+.section-head__bar {
+  grid-column: 1 / -1;
+  position: relative;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding-bottom: 1.1rem;
+}
+.section-head__bar::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--line-strong);
+  transform-origin: left;
+}
+.section-head__count { flex: none; white-space: nowrap; font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.08em; color: var(--dim); }
+.section-head__title {
+  font-size: var(--fs-2xl);
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+/* A head with no lead lets its title run the full width instead of leaving a blank column. */
+.section-head__title:last-child { grid-column: 1 / -1; }
+.section-head__title em,
+.contact__title em,
+.hero__title em { color: var(--accent); letter-spacing: -0.01em; }
+.section-head__lead {
+  max-width: 30rem;
+  padding-bottom: 0.5rem;
+  font-size: var(--fs-md);
+  color: var(--muted);
+}
+.section-head__lead em { color: var(--text); font-size: 1.1em; }
+
+.prose { display: grid; gap: 1.25rem; color: var(--muted); font-size: var(--fs-md); max-width: 38rem; }

@@ -1,0 +1,76 @@
+/* 4. Components ---------------------------------------------------------- */
+.button {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  min-height: 3.25rem;
+  padding: 0 1.6rem;
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.5s var(--ease-out), border-color 0.5s var(--ease-out);
+}
+.button::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  border-radius: inherit;
+  transform: translateY(101%);
+  transition: transform 0.6s var(--ease-out);
+}
+.button:hover::before { transform: none; }
+.button > span, .button > .icon { position: relative; pointer-events: none; }
+.button:active { scale: 0.97; }
+
+.button--primary { background: var(--accent); color: #0a0a0b; }
+.button--primary::before { background: var(--text); }
+.button--primary:hover .icon { animation: nudge-down 1s var(--ease-in-out) infinite; }
+@keyframes nudge-down { 0%, 100% { transform: none; } 50% { transform: translateY(3px); } }
+
+.button--ghost { border: 1px solid var(--line-strong); color: var(--text); }
+.button--ghost::before { background: var(--text); }
+.button--ghost:hover { color: var(--bg); border-color: var(--text); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tags li {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  background: rgb(255 255 255 / 0.02);
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  width: fit-content;
+  padding-block: 0.4rem;
+  font-family: var(--mono);
+  font-size: var(--fs-sm);
+  color: var(--text);
+  background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat;
+  transition: background-size 0.6s var(--ease-out), color 0.3s;
+}
+.link-arrow .icon { transition: transform 0.5s var(--ease-out); }
+.link-arrow:hover { background-size: 100% 1px; color: var(--accent); }
+.link-arrow:hover .icon { transform: translate(3px, -3px); }
+
+/* Pointer-tracked border highlight (--x/--y set by JS on [data-spotlight]). */
+[data-spotlight] { position: relative; }
+[data-spotlight]::after {
+  content: ''; position: absolute; inset: 0; z-index: 3;
+  padding: 1px;
+  border-radius: inherit;
+  background: radial-gradient(22rem circle at var(--x, 50%) var(--y, 50%), rgb(255 107 61 / 0.85), transparent 45%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+[data-spotlight]:hover::after { opacity: 1; }

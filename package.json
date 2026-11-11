@@ -1,9 +1,12 @@
 {
   "name": "dhana-surya-portfolio",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "private": true,
   "description": "Single-page, dependency-free portfolio for Dhana Surya.",
   "scripts": {
-    "serve": "python3 -m http.server 8080"
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check",
+    "watch": "node --watch-path=src --watch-path=assets/css --watch-path=assets/js scripts/build.mjs",
+    "serve": "node scripts/build.mjs && python3 -m http.server 8080"
   }
 }

@@ -1,0 +1,20 @@
+/* 15. Reduced motion -------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+  .js .loader, .grain, .js .cursor, .inspector__scan { display: none; }
+  .js [data-reveal], .js [data-split] .w__i, .js [data-chars] .c,
+  .js .hero__canvas, .js .hero__glow, .js .header,
+  .js .inspector .req, .js .inspector .req__v { opacity: 1; transform: none; translate: none; filter: none; clip-path: none; }
+  .js [data-reveal='clip'] { -webkit-mask: none; mask: none; }
+  .js [data-reveal='clip'] img { scale: 1; }
+  .js .inspector .req__bar::after { transform: scaleX(var(--e, 0.3)); }
+  .js .section-head__bar::after, .js .hero__foot::before, .js [data-reveal] .eyebrow__line { transform: none; }
+  .project__card, .hero__inner, .hero__canvas { transform: none; filter: none; }
+  .hero__inner, .hero__scroll { opacity: 1; }
+}

@@ -1,0 +1,122 @@
+/* 9. Research -------------------------------------------------------------- */
+.research__stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+.rstat { display: flex; flex-direction: column-reverse; gap: 0.75rem; padding: 0 1.5rem 2rem 0; border-bottom: 1px solid var(--line); }
+.rstat + .rstat { padding-left: 1.5rem; border-left: 1px solid var(--line); }
+.rstat dt { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.rstat dd {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 2rem + 4vw, 6.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.rstat small { font-size: 0.4em; color: var(--muted); margin-left: 0.1em; }
+
+.lab {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+
+/* Request inspector: an illustrative read-out of the classifier at work. */
+.inspector {
+  position: sticky; top: calc(var(--header-h) + 2rem);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  font-family: var(--mono);
+  overflow: hidden;
+}
+.inspector__bar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4rem 1rem;
+  padding: 0.8rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted);
+}
+.inspector__title { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--text); }
+.inspector__title i { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: var(--accent); animation: blink 1.6s steps(2, jump-none) infinite; }
+@keyframes blink { 50% { opacity: 0.25; } }
+.inspector__note { color: var(--muted); }
+.req, .inspector__legend {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr) clamp(3rem, 12%, 6rem) 2.6rem;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 1.1rem;
+}
+.req { position: relative; z-index: 1; font-size: 0.78rem; border-bottom: 1px dashed var(--line); }
+.req__m { color: var(--dim); }
+.req code { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.req__bar { position: relative; height: 3px; background: var(--line); overflow: hidden; }
+.req__bar::after {
+  content: ''; position: absolute; inset: 0;
+  background: var(--muted);
+  transform: scaleX(var(--e, 0.3));
+  transform-origin: left;
+}
+.req__v { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: right; color: var(--muted); }
+.req--bad { background: linear-gradient(90deg, var(--accent-soft), transparent 70%); }
+.req--bad .req__bar::after { background: var(--accent); }
+.req--bad .req__v { color: var(--accent); }
+.inspector__legend { font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); padding-block: 0.7rem; }
+.inspector__legend span:last-child { text-align: right; }
+.inspector__scan {
+  position: absolute; left: 0; right: 0; top: 0;
+  height: 5rem;
+  background: linear-gradient(to bottom, transparent, rgb(255 107 61 / 0.07));
+  border-bottom: 1px solid rgb(255 107 61 / 0.45);
+  animation: scan 5.5s var(--ease-in-out) infinite;
+  pointer-events: none;
+}
+@keyframes scan { 0% { transform: translateY(-100%); } 70%, 100% { transform: translateY(32rem); } }
+
+/* Pipeline: the wire fills and steps light up with scroll (--pp set by JS). */
+.pipeline__label { font-family: var(--mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 2.5rem; }
+.pipeline__steps { position: relative; display: grid; gap: clamp(2.25rem, 4.5vw, 4rem); padding-bottom: 0.5rem; }
+.pipeline__steps::before,
+.pipeline__steps::after {
+  content: ''; position: absolute; left: 1.375rem; top: 1.375rem; bottom: 0;
+  width: 1px;
+  background: var(--line-strong);
+}
+.pipeline__steps::after { background: var(--accent); transform: scaleY(var(--pp, 1)); transform-origin: top; }
+.step { position: relative; z-index: 1; display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: clamp(1rem, 2.5vw, 2rem); }
+.step__n {
+  display: grid; place-items: center;
+  width: 2.75rem; height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 6px var(--bg);
+  font-family: var(--mono); font-size: var(--fs-xs);
+  color: #0a0a0b;
+  transition: background-color 0.6s var(--ease-out), color 0.6s, border-color 0.6s;
+}
+.step h3 { font-size: var(--fs-lg); letter-spacing: -0.02em; margin: 0.55rem 0 0.6rem; }
+.step p { font-size: var(--fs-base); color: var(--muted); max-width: 30rem; }
+.step > div { transition: opacity 0.6s; }
+.js .step:not(.is-on) .step__n { background: var(--bg); border-color: var(--line-strong); color: var(--muted); }
+.js .step:not(.is-on) > div { opacity: 0.45; }
+
+.research__detail { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; margin-top: clamp(4rem, 8vw, 7rem); }
+.research__figure { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line-strong); background: var(--surface); }
+.research__shot { display: block; overflow: hidden; }
+.research__shot img { width: 100%; transition: transform 1.2s var(--ease-out), scale 1.6s var(--ease-out); }
+.research__figure:hover img { transform: scale(1.03); }
+.research__figure figcaption {
+  display: flex; gap: 1rem;
+  padding: 0.75rem 1.1rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted);
+}
+.research__figure figcaption span { color: var(--accent); }
+.research__notes { display: grid; gap: 1.5rem; max-width: 38rem; color: var(--muted); font-size: var(--fs-md); }
+.research__heading { font-size: var(--fs-xl); letter-spacing: -0.03em; color: var(--text); }

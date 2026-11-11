@@ -1,0 +1,80 @@
+/* 8. Work -------------------------------------------------------------------- */
+.projects { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); }
+.project { transform-origin: 50% 0; }
+.project__card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(1.5rem, 4.5vw, 4.5rem);
+  align-items: center;
+  padding: clamp(1.25rem, 3vw, 2.75rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.04) inset, 0 -30px 60px -30px rgb(0 0 0 / 0.9);
+  transform: scale(var(--s, 1));
+  filter: brightness(var(--b, 1));
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+.project__info { display: flex; flex-direction: column; gap: 1.5rem; align-self: stretch; }
+.project__top { display: flex; align-items: center; gap: 1rem; font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); }
+.project__index {
+  display: grid; place-items: center;
+  width: 2.25rem; height: 2.25rem; flex-shrink: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--accent);
+  transition: background-color 0.5s var(--ease-out), color 0.5s, border-color 0.5s;
+}
+.project__card:hover .project__index { background: var(--accent); border-color: var(--accent); color: #0a0a0b; }
+.project__title {
+  font-size: clamp(2.5rem, 1.6rem + 3.6vw, 5rem);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+.project__text { color: var(--muted); font-size: var(--fs-md); max-width: 32rem; }
+.project__facts { display: grid; border-top: 1px solid var(--line); }
+.project__facts div {
+  display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-sm);
+  transition: padding 0.5s var(--ease-out), border-color 0.4s;
+}
+.project__facts div:hover { padding-left: 0.5rem; border-color: var(--line-strong); }
+.project__facts dt { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); padding-top: 0.15rem; }
+.project__info .link-arrow { margin-top: auto; }
+
+/* Screenshot in a window frame; the whole frame wipes in, the image settles. */
+.project__media {
+  position: relative;
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+}
+.project__chrome {
+  display: flex; align-items: center; gap: 0.4rem;
+  height: 2.25rem;
+  padding-inline: 0.9rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+}
+.project__chrome i { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--line-strong); transition: background-color 0.4s; }
+.project__card:hover .project__chrome i:first-child { background: var(--accent); }
+.project__chrome b {
+  margin-left: 0.6rem;
+  font-family: var(--mono); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.02em;
+  color: var(--muted);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.project__shot { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; }
+.project__shot img {
+  position: absolute; inset: -4%;
+  width: 108%; height: 108%; max-width: none;
+  object-fit: cover;
+  transform: translate3d(var(--mx, 0), var(--my, 0), 0);
+  transition: transform 1.2s var(--ease-out), scale 1.6s var(--ease-out);
+}
+.project__card:hover .project__shot img { scale: 1.04; }

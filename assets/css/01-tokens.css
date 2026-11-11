@@ -1,0 +1,44 @@
+/* 1. Tokens ---------------------------------------------------------------- */
+:root {
+  --bg: #0a0a0b;
+  --bg-raised: #111113;
+  --surface: #151517;
+  --surface-2: #1c1c1f;
+  --line: rgb(237 237 234 / 0.09);
+  --line-strong: rgb(237 237 234 / 0.18);
+
+  --text: #ededea;
+  --muted: #a1a19b;          /* 7.4:1 on --bg */
+  --dim: #6f6f6a;            /* decorative / large text only */
+
+  --accent: #ff6b3d;         /* 6.9:1 on --bg */
+  --accent-2: #ffb38a;
+  --accent-soft: rgb(255 107 61 / 0.14);
+  --ok: #3ddc84;
+
+  --sans: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --serif: 'Instrument Serif', ui-serif, Georgia, serif;
+  --mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: clamp(1.05rem, 0.98rem + 0.3vw, 1.2rem);
+  --fs-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
+  --fs-xl: clamp(2rem, 1.4rem + 2.6vw, 3.5rem);
+  --fs-2xl: clamp(2.6rem, 1.6rem + 4.6vw, 6rem);
+  /* Capped so the longest hero line still fits the container at its widest. */
+  --fs-hero: clamp(3.1rem, min(1.2rem + 8.4vw, 15vh), 9.25rem);
+
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --section: clamp(6rem, 4rem + 9vw, 12rem);
+  --header-h: 4.5rem;
+
+  --radius-sm: 0.3rem;
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+  --dur: 0.9s;
+}

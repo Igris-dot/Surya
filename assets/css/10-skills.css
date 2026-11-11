@@ -1,0 +1,52 @@
+/* 10. Skills: a ruled ledger instead of cards ------------------------------ */
+.ledger { border-top: 1px solid var(--line-strong); }
+.ledger__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding-block: clamp(1.4rem, 2.6vw, 2.25rem);
+  border-bottom: 1px solid var(--line);
+  isolation: isolate;
+}
+.ledger__row::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: var(--bg-raised);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.6s var(--ease-out);
+}
+.ledger__row:hover::before { transform: none; }
+.ledger__n { font-family: var(--serif); font-style: italic; font-size: 2.5rem; line-height: 1; color: var(--accent); }
+.ledger__row h3 { font-size: clamp(1.5rem, 1rem + 1.7vw, 2.5rem); letter-spacing: -0.03em; }
+.ledger__n, .ledger__row h3, .ledger__row .tags { transition: transform 0.6s var(--ease-out); }
+.ledger__row .tags { justify-content: flex-end; }
+.ledger__row:hover .ledger__n, .ledger__row:hover h3 { transform: translateX(1.25rem); }
+.ledger__row:hover .tags { transform: translateX(-1.25rem); }
+.ledger__row:hover .tags li { border-color: var(--line-strong); color: var(--text); }
+
+.cta-band {
+  position: relative;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.75rem);
+  border-radius: var(--radius-lg);
+  background: var(--accent);
+  color: #0a0a0b;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cta-band::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: var(--text);
+  transform: translateY(101%);
+  transition: transform 0.7s var(--ease-out);
+}
+.cta-band:hover::before { transform: none; }
+.cta-band p { font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; }
+.cta-band .stretched { margin-left: auto; }
+.cta-band .stretched::after { content: ''; position: absolute; inset: 0; }
+.cta-band strong { display: block; color: inherit; font-weight: 400; font-size: var(--fs-2xl); letter-spacing: -0.045em; line-height: 0.95; }
+.cta-band .icon { width: clamp(2.5rem, 5vw, 4.5rem); height: clamp(2.5rem, 5vw, 4.5rem); transition: transform 0.7s var(--ease-out); }
+.cta-band:hover .icon { transform: rotate(45deg); }
